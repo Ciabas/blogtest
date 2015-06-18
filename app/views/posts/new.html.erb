@@ -1,0 +1,14 @@
+<h1> Nowy post <h1>
+<%= form_for(@post) do |f| %>
+	<ul>
+		<% @post.errors.full_messages.each do |err| %>
+			<li>
+				<%= err %>
+			</li>
+		<% end %>
+	</ul>
+	<%= f.label :article %>
+	<%= f.text_field :article %> <br>
+	<% f.label :authors %>
+  <%= f.submit "Add" %>
+<% end %>

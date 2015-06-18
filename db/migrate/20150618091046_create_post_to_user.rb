@@ -1,8 +1,8 @@
 class CreatePostToUser < ActiveRecord::Migration
   def change
     create_table :post_to_users do |t|
-    	t.integer :id_post
-    	t.integer :id_user
+    	t.integer :post_id
+    	t.integer :user_id
     end
   end
 end

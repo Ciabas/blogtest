@@ -1,8 +1,8 @@
 class CreateTagToPost < ActiveRecord::Migration
   def change
     create_table :tag_to_posts do |t|
-    	t.integer :id_tag
-    	t.integer :id_post
+    	t.integer :tag_id
+    	t.integer :post_id
     end
   end
 end

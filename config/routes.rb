@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 root 'users#index'
 resources :posts
 resources :users
-# get 'post_to_users/:id' => 'post_to_users#showPostsFromUser' as: :posts_from_user_path
+# get 'post_to_users/:id' => 'post_to_users#showPostsFromUser', as: :posts_from_user_path
 
 
 
