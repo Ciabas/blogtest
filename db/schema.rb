@@ -28,12 +28,8 @@ ActiveRecord::Schema.define(version: 20150619133738) do
     t.datetime "updated_at"
   end
 
-  create_table "post_to_users", force: :cascade do |t|
-    t.integer "post_id"
-    t.integer "user_id"
-  end
-
   create_table "posts", force: :cascade do |t|
+    t.integer  "user_id"
     t.text     "article"
     t.datetime "created_at"
     t.datetime "updated_at"
