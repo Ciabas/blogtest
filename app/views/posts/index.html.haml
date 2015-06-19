@@ -1,0 +1,7 @@
+%h1 Posty:
+%ul
+  - @posts.each do |post|
+    %li
+      = post.article
+      = post.user.email
+= link_to "Add", new_post_path
