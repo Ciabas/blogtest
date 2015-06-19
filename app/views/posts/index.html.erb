@@ -3,7 +3,8 @@
 <% @posts.each do |post| %>
 	<li>
 		<%= post.article %>
+		<%= post.user.email %>
 	</li>
 	<% end %>
 </ul>
-<%= link_to "Dodaj nowy", new_post_path%>
+<%= link_to "Add", new_post_path %>

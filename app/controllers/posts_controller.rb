@@ -1,10 +1,13 @@
 class PostsController < ApplicationController
+	before_action :authenticate_user! 
+
 	def index
 		@posts = Post.all
 	end
 
 	def show
 		@post = Post.find(params[:id])
+		@users = @post.users
 	end 
 
 	def new 
@@ -13,7 +16,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(posts_params)
-		#gdzie tu zwiazac post z userem
+		@post.user = current_user
 		if @post.save
 			redirect_to posts_path
 		else
@@ -21,10 +24,9 @@ class PostsController < ApplicationController
 		end	
 	end
 
-
 	private
 	def posts_params
-		 params.require(:post).permit(:article)
+		 params.require(:post).permit(:article, :user_id)
 	end
 
 end

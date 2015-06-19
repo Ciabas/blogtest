@@ -11,6 +11,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pg'
 
+source 'https://rails-assets.org' do 
+	gem 'rails-assets-bootstrap-sass'
+end
+
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -18,4 +23,5 @@ group :development, :test do
 end
 
 gem 'rails_12factor', group: :production
-
+gem 'devise'
+gem 'haml-rails'
