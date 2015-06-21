@@ -1,0 +1,23 @@
+%nav.navbar.navbar-inverse
+  .container-fluid
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %a.navbar-brand{:href => "#"} DropBlog
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      .container
+        %ul.nav.navbar-nav.navbar-center
+          %li
+            =link_to "Użytkownicy", users_path
+          %li
+            =link_to "Posty", posts_path
+        %ul.nav.navbar-nav.navbar-right
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              =current_user.email
+              %span.caret
+            %ul.dropdown-menu
+              %li
+                =link_to "Edytuj", edit_user_path(current_user)
+              %li
+                =link_to 'Wyloguj', destroy_user_session_path(current_user), method: :delete

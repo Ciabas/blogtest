@@ -1,0 +1,11 @@
+%h1
+  Nowy post
+= form_for(@post) do |f|
+  %ul
+    - @post.errors.full_messages.each do |err|
+      %li
+        = err
+  = f.label :article
+  = f.text_field :article
+  %br
+  = f.submit "Dodaj", class: "btn btn-medium btn-warning"
